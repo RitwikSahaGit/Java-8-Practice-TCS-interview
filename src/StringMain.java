@@ -5,8 +5,15 @@ public class StringMain {
         System.out.println(reverseBySwapping(str.toCharArray()));
         System.out.println(reverseByLoop("Ritwik"));
         System.out.println(reverseByStringBuilder("Ritwik"));
+        System.out.println(removeSlashes("https://example.com///////////"));
 
     }
+
+    public static String removeSlashes(String str) {
+        String cleanURL = str.replaceAll("/+$", "");
+        return cleanURL;
+    }
+
     public static String reverseByStringBuilder(String str) {
         StringBuilder sb = new StringBuilder(str);
 
