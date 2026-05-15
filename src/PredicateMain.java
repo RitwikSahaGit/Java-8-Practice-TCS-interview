@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.sql.SQLOutput;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class PredicateMain {
@@ -27,6 +30,20 @@ public class PredicateMain {
         Predicate<String> or = start.or(end);
         System.out.println(or.test("Ritwik"));
         System.out.println(start.or(end).test("Ritwik"));//Same as previous line
+
+
+        Predicate<String> r = s ->  s.toLowerCase().charAt(0)=='r';
+        Predicate<String> k = s-> s.toLowerCase().charAt(s.length()-1)=='k';
+
+        Predicate<String> rANDk = r.and(k);
+
+        List<String> list = Arrays.asList("Ritwik", "Ankita", "ram", "hfbvjhe");
+
+        for(String a:list){
+            if(rANDk.test(a)){
+                System.out.println(a);
+            }
+        }
 
 
     }

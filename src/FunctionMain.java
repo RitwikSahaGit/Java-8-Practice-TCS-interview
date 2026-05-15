@@ -5,8 +5,8 @@ import java.util.function.Function;
 
 public class FunctionMain {
     public static void main(String[] args) {
-        Function<String, Integer> fun= s->s.length();
-        System.out.println(fun.apply("abc"));
+//        Function<String, Integer> fun= s->s.length();
+//        System.out.println(fun.apply("abc"));
 
 
 //        Function<String, String> func = str -> str.substring(0,3).toLowerCase();
@@ -31,11 +31,11 @@ public class FunctionMain {
 //        //List<Student> filteredStudents2=filter.apply(students);
 //        System.out.println(filter.apply(students));
 //
-//        Function<Integer, Integer> func1 = x -> x+1;
-//        Function<Integer, Integer> func2 = x -> x*x;
-//
-//        System.out.println(func1.andThen(func2).apply(2));
-//        System.out.println(func2.andThen(func1).apply(2));
+        Function<Integer, Integer> func1 = x -> x+1;
+        Function<Integer, Integer> func2 = x -> x*x;
+
+        System.out.println(func1.andThen(func2).apply(2));
+        System.out.println(func2.andThen(func1).apply(2));
 //
 //        Function<Integer, Integer> func3 = func1.andThen(func2);
 
